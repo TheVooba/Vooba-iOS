@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		94D8E9A815E026CF00B984FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9A715E026CF00B984FE /* UIKit.framework */; };
+		94D8E9AA15E026CF00B984FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9A915E026CF00B984FE /* Foundation.framework */; };
+		94D8E9AC15E026CF00B984FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9AB15E026CF00B984FE /* CoreGraphics.framework */; };
+		94D8E9AE15E026CF00B984FE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9AD15E026CF00B984FE /* CoreData.framework */; };
+		94D8E9B415E026CF00B984FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94D8E9B215E026CF00B984FE /* InfoPlist.strings */; };
+		94D8E9B615E026CF00B984FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D8E9B515E026CF00B984FE /* main.m */; };
+		94D8E9BA15E026CF00B984FE /* VBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D8E9B915E026CF00B984FE /* VBAppDelegate.m */; };
+		94D8E9BD15E026CF00B984FE /* Vooba.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94D8E9BB15E026CF00B984FE /* Vooba.xcdatamodeld */; };
+		94D8E9C515E026CF00B984FE /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9C415E026CF00B984FE /* SenTestingKit.framework */; };
+		94D8E9C615E026CF00B984FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9A715E026CF00B984FE /* UIKit.framework */; };
+		94D8E9C715E026CF00B984FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9A915E026CF00B984FE /* Foundation.framework */; };
+		94D8E9C815E026CF00B984FE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9AD15E026CF00B984FE /* CoreData.framework */; };
+		94D8E9D015E026CF00B984FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94D8E9CE15E026CF00B984FE /* InfoPlist.strings */; };
+		94D8E9D315E026CF00B984FE /* VoobaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D8E9D215E026CF00B984FE /* VoobaTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		94D8E9C915E026CF00B984FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94D8E99A15E026CF00B984FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94D8E9A215E026CF00B984FE;
+			remoteInfo = Vooba;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		94D8E9A315E026CF00B984FE /* Vooba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vooba.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94D8E9A715E026CF00B984FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		94D8E9A915E026CF00B984FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		94D8E9AB15E026CF00B984FE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		94D8E9AD15E026CF00B984FE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		94D8E9B115E026CF00B984FE /* Vooba-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Vooba-Info.plist"; sourceTree = "<group>"; };
+		94D8E9B315E026CF00B984FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		94D8E9B515E026CF00B984FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		94D8E9B715E026CF00B984FE /* Vooba-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vooba-Prefix.pch"; sourceTree = "<group>"; };
+		94D8E9B815E026CF00B984FE /* VBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VBAppDelegate.h; sourceTree = "<group>"; };
+		94D8E9B915E026CF00B984FE /* VBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VBAppDelegate.m; sourceTree = "<group>"; };
+		94D8E9BC15E026CF00B984FE /* Vooba.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vooba.xcdatamodel; sourceTree = "<group>"; };
+		94D8E9C315E026CF00B984FE /* VoobaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoobaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94D8E9C415E026CF00B984FE /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		94D8E9CD15E026CF00B984FE /* VoobaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VoobaTests-Info.plist"; sourceTree = "<group>"; };
+		94D8E9CF15E026CF00B984FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		94D8E9D115E026CF00B984FE /* VoobaTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoobaTests.h; sourceTree = "<group>"; };
+		94D8E9D215E026CF00B984FE /* VoobaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoobaTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		94D8E9A015E026CF00B984FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D8E9A815E026CF00B984FE /* UIKit.framework in Frameworks */,
+				94D8E9AA15E026CF00B984FE /* Foundation.framework in Frameworks */,
+				94D8E9AC15E026CF00B984FE /* CoreGraphics.framework in Frameworks */,
+				94D8E9AE15E026CF00B984FE /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D8E9BF15E026CF00B984FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D8E9C515E026CF00B984FE /* SenTestingKit.framework in Frameworks */,
+				94D8E9C615E026CF00B984FE /* UIKit.framework in Frameworks */,
+				94D8E9C715E026CF00B984FE /* Foundation.framework in Frameworks */,
+				94D8E9C815E026CF00B984FE /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		94D8E99815E026CF00B984FE = {
+			isa = PBXGroup;
+			children = (
+				94D8E9AF15E026CF00B984FE /* Vooba */,
+				94D8E9CB15E026CF00B984FE /* VoobaTests */,
+				94D8E9A615E026CF00B984FE /* Frameworks */,
+				94D8E9A415E026CF00B984FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		94D8E9A415E026CF00B984FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94D8E9A315E026CF00B984FE /* Vooba.app */,
+				94D8E9C315E026CF00B984FE /* VoobaTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94D8E9A615E026CF00B984FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94D8E9A715E026CF00B984FE /* UIKit.framework */,
+				94D8E9A915E026CF00B984FE /* Foundation.framework */,
+				94D8E9AB15E026CF00B984FE /* CoreGraphics.framework */,
+				94D8E9AD15E026CF00B984FE /* CoreData.framework */,
+				94D8E9C415E026CF00B984FE /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94D8E9AF15E026CF00B984FE /* Vooba */ = {
+			isa = PBXGroup;
+			children = (
+				94D8E9B815E026CF00B984FE /* VBAppDelegate.h */,
+				94D8E9B915E026CF00B984FE /* VBAppDelegate.m */,
+				94D8E9BB15E026CF00B984FE /* Vooba.xcdatamodeld */,
+				94D8E9B015E026CF00B984FE /* Supporting Files */,
+			);
+			path = Vooba;
+			sourceTree = "<group>";
+		};
+		94D8E9B015E026CF00B984FE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94D8E9B115E026CF00B984FE /* Vooba-Info.plist */,
+				94D8E9B215E026CF00B984FE /* InfoPlist.strings */,
+				94D8E9B515E026CF00B984FE /* main.m */,
+				94D8E9B715E026CF00B984FE /* Vooba-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94D8E9CB15E026CF00B984FE /* VoobaTests */ = {
+			isa = PBXGroup;
+			children = (
+				94D8E9D115E026CF00B984FE /* VoobaTests.h */,
+				94D8E9D215E026CF00B984FE /* VoobaTests.m */,
+				94D8E9CC15E026CF00B984FE /* Supporting Files */,
+			);
+			path = VoobaTests;
+			sourceTree = "<group>";
+		};
+		94D8E9CC15E026CF00B984FE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94D8E9CD15E026CF00B984FE /* VoobaTests-Info.plist */,
+				94D8E9CE15E026CF00B984FE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		94D8E9A215E026CF00B984FE /* Vooba */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94D8E9D615E026CF00B984FE /* Build configuration list for PBXNativeTarget "Vooba" */;
+			buildPhases = (
+				94D8E99F15E026CF00B984FE /* Sources */,
+				94D8E9A015E026CF00B984FE /* Frameworks */,
+				94D8E9A115E026CF00B984FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vooba;
+			productName = Vooba;
+			productReference = 94D8E9A315E026CF00B984FE /* Vooba.app */;
+			productType = "com.apple.product-type.application";
+		};
+		94D8E9C215E026CF00B984FE /* VoobaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94D8E9D915E026CF00B984FE /* Build configuration list for PBXNativeTarget "VoobaTests" */;
+			buildPhases = (
+				94D8E9BE15E026CF00B984FE /* Sources */,
+				94D8E9BF15E026CF00B984FE /* Frameworks */,
+				94D8E9C015E026CF00B984FE /* Resources */,
+				94D8E9C115E026CF00B984FE /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94D8E9CA15E026CF00B984FE /* PBXTargetDependency */,
+			);
+			name = VoobaTests;
+			productName = VoobaTests;
+			productReference = 94D8E9C315E026CF00B984FE /* VoobaTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94D8E99A15E026CF00B984FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VB;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Ryan Wersal";
+			};
+			buildConfigurationList = 94D8E99D15E026CF00B984FE /* Build configuration list for PBXProject "Vooba" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 94D8E99815E026CF00B984FE;
+			productRefGroup = 94D8E9A415E026CF00B984FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94D8E9A215E026CF00B984FE /* Vooba */,
+				94D8E9C215E026CF00B984FE /* VoobaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94D8E9A115E026CF00B984FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D8E9B415E026CF00B984FE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D8E9C015E026CF00B984FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D8E9D015E026CF00B984FE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		94D8E9C115E026CF00B984FE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		94D8E99F15E026CF00B984FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D8E9B615E026CF00B984FE /* main.m in Sources */,
+				94D8E9BA15E026CF00B984FE /* VBAppDelegate.m in Sources */,
+				94D8E9BD15E026CF00B984FE /* Vooba.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D8E9BE15E026CF00B984FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94D8E9D315E026CF00B984FE /* VoobaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		94D8E9CA15E026CF00B984FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94D8E9A215E026CF00B984FE /* Vooba */;
+			targetProxy = 94D8E9C915E026CF00B984FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		94D8E9B215E026CF00B984FE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94D8E9B315E026CF00B984FE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		94D8E9CE15E026CF00B984FE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94D8E9CF15E026CF00B984FE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		94D8E9D415E026CF00B984FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		94D8E9D515E026CF00B984FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		94D8E9D715E026CF00B984FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vooba/Vooba-Prefix.pch";
+				INFOPLIST_FILE = "Vooba/Vooba-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		94D8E9D815E026CF00B984FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vooba/Vooba-Prefix.pch";
+				INFOPLIST_FILE = "Vooba/Vooba-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		94D8E9DA15E026CF00B984FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Vooba.app/Vooba";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vooba/Vooba-Prefix.pch";
+				INFOPLIST_FILE = "VoobaTests/VoobaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		94D8E9DB15E026CF00B984FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Vooba.app/Vooba";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vooba/Vooba-Prefix.pch";
+				INFOPLIST_FILE = "VoobaTests/VoobaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		94D8E99D15E026CF00B984FE /* Build configuration list for PBXProject "Vooba" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94D8E9D415E026CF00B984FE /* Debug */,
+				94D8E9D515E026CF00B984FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94D8E9D615E026CF00B984FE /* Build configuration list for PBXNativeTarget "Vooba" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94D8E9D715E026CF00B984FE /* Debug */,
+				94D8E9D815E026CF00B984FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94D8E9D915E026CF00B984FE /* Build configuration list for PBXNativeTarget "VoobaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94D8E9DA15E026CF00B984FE /* Debug */,
+				94D8E9DB15E026CF00B984FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		94D8E9BB15E026CF00B984FE /* Vooba.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				94D8E9BC15E026CF00B984FE /* Vooba.xcdatamodel */,
+			);
+			currentVersion = 94D8E9BC15E026CF00B984FE /* Vooba.xcdatamodel */;
+			path = Vooba.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 94D8E99A15E026CF00B984FE /* Project object */;
+}
