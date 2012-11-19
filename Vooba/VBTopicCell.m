@@ -20,8 +20,8 @@
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    VBTopicCell *cell = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (cell != nil)
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self != nil)
     {
         self.imgAvatar = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
         [self.imgAvatar setContentMode:UIViewContentModeScaleAspectFit];
@@ -36,11 +36,11 @@
         [self.lblText setNumberOfLines:0];
         [self.lblText setFont:[UIFont systemFontOfSize:12]];
         
-        [cell.contentView addSubview:self.imgAvatar];
-        [cell.contentView addSubview:self.lblName];
-        [cell.contentView addSubview:self.lblText];
+        [self.contentView addSubview:self.imgAvatar];
+        [self.contentView addSubview:self.lblName];
+        [self.contentView addSubview:self.lblText];
     }    
-    return cell;
+    return self;
 }
 
 - (void)setAvatarURL:(NSURL*)url;

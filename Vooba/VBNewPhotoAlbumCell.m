@@ -18,17 +18,17 @@
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    VBNewPhotoAlbumCell *cell = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (cell != nil)
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self != nil)
     {
         self.lblContent = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 15)];
         [self.lblContent setMinimumScaleFactor:12];
         [self.lblContent setNumberOfLines:1];
         [self.lblContent setFont:[UIFont systemFontOfSize:12]];
         
-        [cell.contentView addSubview:self.lblContent];
+        [self.contentView addSubview:self.lblContent];
     }
-    return cell;
+    return self;
 }
 
 - (void)setName:(NSString *)name
