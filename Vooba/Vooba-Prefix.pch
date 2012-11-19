@@ -24,6 +24,7 @@
 
 // Libary Imports
 #import <AFNetworking.h>
+#import <TTTAttributedLabel.h>
 
 // Categories
 #import "NSString+WhitespaceTrimming.h"

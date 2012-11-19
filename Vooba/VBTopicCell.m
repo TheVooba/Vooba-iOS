@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) UIImageView *imgAvatar;
 @property (nonatomic, strong) UILabel* lblName;
-@property (nonatomic, strong) UILabel* lblText;
+@property (nonatomic, strong) TTTAttributedLabel* lblText;
 
 @end
 
@@ -30,11 +30,12 @@
         [self.lblName setMinimumScaleFactor:12];
         [self.lblName setFont:[UIFont boldSystemFontOfSize:12]];
         
-        self.lblText = [[UILabel alloc] initWithFrame:CGRectZero];
+        self.lblText = [[TTTAttributedLabel alloc] initWithFrame:CGRectZero];
         [self.lblText setLineBreakMode:NSLineBreakByWordWrapping];
         [self.lblText setMinimumScaleFactor:12];
         [self.lblText setNumberOfLines:0];
         [self.lblText setFont:[UIFont systemFontOfSize:12]];
+        [self.lblText setDataDetectorTypes:UIDataDetectorTypeLink];
         
         [self.contentView addSubview:self.imgAvatar];
         [self.contentView addSubview:self.lblName];
@@ -74,7 +75,7 @@
     CGSize size = [content sizeWithFont:[UIFont systemFontOfSize:12]
                       constrainedToSize:constraint
                           lineBreakMode:NSLineBreakByWordWrapping];
-    return size.height;
+    return size.height + 10;
 }
 
 + (CGFloat)heightWithContent:(NSString *)content
