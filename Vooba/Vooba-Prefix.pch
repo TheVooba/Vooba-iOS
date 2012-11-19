@@ -12,4 +12,16 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
+
+    #import <MobileCoreServices/MobileCoreServices.h>
+    #import <SystemConfiguration/SystemConfiguration.h>
 #endif
+
+// Import file to define various app tokens - you are responsible for creating and adding this file.
+#import "Tokens.h"
+
+// Libary Imports
+#import <AFNetworking.h>
+
+// Categories
+#import "NSString+WhitespaceTrimming.h"
