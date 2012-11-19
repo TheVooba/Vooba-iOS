@@ -17,6 +17,8 @@
     #import <SystemConfiguration/SystemConfiguration.h>
 #endif
 
+#import "VBVoobaClient.h"
+
 // Import file to define various app tokens - you are responsible for creating and adding this file.
 #import "Tokens.h"
 

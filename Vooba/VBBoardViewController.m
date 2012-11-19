@@ -32,41 +32,18 @@
     [self.tableView registerClass:[VBNewFriendCell class] forCellReuseIdentifier:[VBNewFriendCell cellIdentifier]];
     [self.tableView registerClass:[VBNewPhotoAlbumCell class] forCellReuseIdentifier:[VBNewPhotoAlbumCell cellIdentifier]];
     
-    // Temporary API calls - these need a better home
-    __block NSString *userToken = nil;
-    
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://vooba.net/api/"]];
-    
-    // Login
-    NSDictionary *loginParams = [NSDictionary dictionaryWithObjectsAndKeys:
-                            VOOBA_APP_TOKEN, @"appToken",
-                            @"ryanwersal@gmail.com", @"email",
-                            @"JOxtxRGLS9fpMX5rotTDrAFbwvqTIh", @"password", nil];
-    NSURLRequest *loginRequest = [client requestWithMethod:@"POST" path:@"api.php?act=login" parameters:loginParams];
-    AFJSONRequestOperation *loginOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:loginRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSLog(@"%@", JSON);
-        userToken = [JSON objectForKey:@"userToken"];
-    } failure:nil];
-    
-    // Get Board Posts
-    NSDictionary *boardParams = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 VOOBA_APP_TOKEN, @"appToken",
-                                 @"e4951e957440c49d52f512c7f64cadfae60e33a15f0f5f1bbc3114712a3c3921", @"userToken",
-                                 @0, @"start",
-                                 @500, @"end",
-                                 @"20100101", @"afterDate", nil];
-    NSURLRequest *boardRequest = [client requestWithMethod:@"POST" path:@"api.php?act=getBoardPosts" parameters:boardParams];
-    AFJSONRequestOperation *boardOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:boardRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSLog(@"%@", JSON);
-        self.postData = [[[JSON objectForKey:@"theFeed"] objectAtIndex:0] objectForKey:@"data"];
-        [self.tableView reloadData];
-    } failure:nil];
-    [boardOperation addDependency:loginOperation];
-    
-    NSOperationQueue *queue = [NSOperationQueue new];
-    [queue setMaxConcurrentOperationCount:1];
-    [queue addOperation:loginOperation];
-    [queue addOperation:boardOperation];
+    // Get board posts.
+    [[VBVoobaClient sharedClient] boardPostsWithBlock:^(NSArray *posts, NSError *error) {
+        if (error == nil)
+        {
+            self.postData = posts;
+            [self.tableView reloadData];
+        }
+        else
+        {
+            NSLog(@"%@", error);
+        }
+    }];
 }
 
 #pragma mark - UITableViewDataSource

@@ -15,6 +15,7 @@
 		9429309F1659E1290002504B /* NSString+WhitespaceTrimming.m in Sources */ = {isa = PBXBuildFile; fileRef = 9429309E1659E1290002504B /* NSString+WhitespaceTrimming.m */; };
 		942930A21659F4B80002504B /* VBNewFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 942930A11659F4B70002504B /* VBNewFriendCell.m */; };
 		942930A5165A006E0002504B /* VBNewPhotoAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 942930A4165A006E0002504B /* VBNewPhotoAlbumCell.m */; };
+		942930AA165A07490002504B /* VBVoobaClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 942930A9165A07490002504B /* VBVoobaClient.m */; };
 		943B7E8516365651009A4799 /* VBBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943B7E8416365651009A4799 /* VBBoardViewController.m */; };
 		943B7E881636566C009A4799 /* iPhone-Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943B7E871636566C009A4799 /* iPhone-Storyboard.storyboard */; };
 		94D8E9A815E026CF00B984FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9A715E026CF00B984FE /* UIKit.framework */; };
@@ -60,6 +61,8 @@
 		942930A3165A006E0002504B /* VBNewPhotoAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBNewPhotoAlbumCell.h; sourceTree = "<group>"; };
 		942930A4165A006E0002504B /* VBNewPhotoAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBNewPhotoAlbumCell.m; sourceTree = "<group>"; };
 		942930A6165A033F0002504B /* Tokens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tokens.h; sourceTree = "<group>"; };
+		942930A8165A07490002504B /* VBVoobaClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBVoobaClient.h; sourceTree = "<group>"; };
+		942930A9165A07490002504B /* VBVoobaClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBVoobaClient.m; sourceTree = "<group>"; };
 		943B7E8316365651009A4799 /* VBBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBBoardViewController.h; sourceTree = "<group>"; };
 		943B7E8416365651009A4799 /* VBBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBBoardViewController.m; sourceTree = "<group>"; };
 		943B7E871636566C009A4799 /* iPhone-Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "iPhone-Storyboard.storyboard"; sourceTree = "<group>"; };
@@ -132,6 +135,15 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		942930A7165A065A0002504B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				942930A8165A07490002504B /* VBVoobaClient.h */,
+				942930A9165A07490002504B /* VBVoobaClient.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		94331A9D1648A18700708E1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +206,7 @@
 		94D8E9AF15E026CF00B984FE /* Vooba */ = {
 			isa = PBXGroup;
 			children = (
+				942930A7165A065A0002504B /* API */,
 				942930991659708E0002504B /* Common */,
 				94331A9D1648A18700708E1E /* Views */,
 				94D8E9B815E026CF00B984FE /* VBAppDelegate.h */,
@@ -369,6 +382,7 @@
 				9429309F1659E1290002504B /* NSString+WhitespaceTrimming.m in Sources */,
 				942930A21659F4B80002504B /* VBNewFriendCell.m in Sources */,
 				942930A5165A006E0002504B /* VBNewPhotoAlbumCell.m in Sources */,
+				942930AA165A07490002504B /* VBVoobaClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
