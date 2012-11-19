@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VBBoardViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface VBBoardViewController : UITableViewController
 
 @end

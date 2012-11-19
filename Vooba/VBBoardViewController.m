@@ -14,8 +14,9 @@
 
 @interface VBBoardViewController ()
 
-@property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *postData;
+
+- (void)refresh;
 
 @end
 
@@ -32,12 +33,22 @@
     [self.tableView registerClass:[VBNewFriendCell class] forCellReuseIdentifier:[VBNewFriendCell cellIdentifier]];
     [self.tableView registerClass:[VBNewPhotoAlbumCell class] forCellReuseIdentifier:[VBNewPhotoAlbumCell cellIdentifier]];
     
-    // Get board posts.
+    // Configure Pull to Refresh.
+    UIRefreshControl *refreshControl = [UIRefreshControl new];
+    [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    
+    [self refresh];
+}
+
+- (void)refresh
+{
     [[VBVoobaClient sharedClient] boardPostsWithBlock:^(NSArray *posts, NSError *error) {
         if (error == nil)
         {
             self.postData = posts;
             [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
         }
         else
         {
