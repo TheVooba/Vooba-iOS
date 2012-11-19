@@ -19,15 +19,15 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self != nil)
-    {
-        self.lblContent = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 15)];
-        [self.lblContent setMinimumScaleFactor:12];
-        [self.lblContent setNumberOfLines:1];
-        [self.lblContent setFont:[UIFont systemFontOfSize:12]];
-        
-        [self.contentView addSubview:self.lblContent];
-    }
+    if (self == nil) return nil;
+    
+    self.lblContent = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 15)];
+    [self.lblContent setMinimumScaleFactor:12];
+    [self.lblContent setNumberOfLines:1];
+    [self.lblContent setFont:[UIFont systemFontOfSize:12]];
+    
+    [self.contentView addSubview:self.lblContent];
+    
     return self;
 }
 

@@ -21,26 +21,26 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self != nil)
-    {
-        self.imgAvatar = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
-        [self.imgAvatar setContentMode:UIViewContentModeScaleAspectFit];
-        
-        self.lblName = [[UILabel alloc] initWithFrame:CGRectMake(65, 10, 245, 15)];
-        [self.lblName setMinimumScaleFactor:12];
-        [self.lblName setFont:[UIFont boldSystemFontOfSize:12]];
-        
-        self.lblText = [[TTTAttributedLabel alloc] initWithFrame:CGRectZero];
-        [self.lblText setLineBreakMode:NSLineBreakByWordWrapping];
-        [self.lblText setMinimumScaleFactor:12];
-        [self.lblText setNumberOfLines:0];
-        [self.lblText setFont:[UIFont systemFontOfSize:12]];
-        [self.lblText setDataDetectorTypes:UIDataDetectorTypeLink];
-        
-        [self.contentView addSubview:self.imgAvatar];
-        [self.contentView addSubview:self.lblName];
-        [self.contentView addSubview:self.lblText];
-    }    
+    if (self == nil) return nil;
+    
+    self.imgAvatar = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
+    [self.imgAvatar setContentMode:UIViewContentModeScaleAspectFit];
+    
+    self.lblName = [[UILabel alloc] initWithFrame:CGRectMake(65, 10, 245, 15)];
+    [self.lblName setMinimumScaleFactor:12];
+    [self.lblName setFont:[UIFont boldSystemFontOfSize:12]];
+    
+    self.lblText = [[TTTAttributedLabel alloc] initWithFrame:CGRectZero];
+    [self.lblText setLineBreakMode:NSLineBreakByWordWrapping];
+    [self.lblText setMinimumScaleFactor:12];
+    [self.lblText setNumberOfLines:0];
+    [self.lblText setFont:[UIFont systemFontOfSize:12]];
+    [self.lblText setDataDetectorTypes:UIDataDetectorTypeLink];
+    
+    [self.contentView addSubview:self.imgAvatar];
+    [self.contentView addSubview:self.lblName];
+    [self.contentView addSubview:self.lblText];
+    
     return self;
 }
 
