@@ -66,7 +66,7 @@
 - (void)setComment:(NSString *)comment
 {
     self.lblText.text = [comment stringByTrimmingWhitespace];
-    self.lblText.frame = CGRectMake(65, 30, 245, [VBTopicCell heightForCommentLabelWithContent:comment]);
+    [self setNeedsLayout];
 }
 
 + (CGFloat)heightForCommentLabelWithContent:(NSString*)content
@@ -82,6 +82,20 @@
 {
     CGFloat height = MAX([VBTopicCell heightForCommentLabelWithContent:content] + 30, 60);
     return height + 10;
+}
+
+#pragma mark - UIView
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    self.imgAvatar.frame = CGRectMake(10, 10, 50, 50);
+    self.lblName.frame = CGRectMake(65, 10, 245, 15);
+    
+    CGRect textFrame = CGRectOffset(self.lblName.frame, 0, 20);
+    textFrame.size.height = [VBTopicCell heightForCommentLabelWithContent:self.lblText.text];
+    self.lblText.frame = textFrame;
 }
 
 @end
