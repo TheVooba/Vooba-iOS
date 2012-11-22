@@ -8,6 +8,12 @@
 
 #import "VBVoobaClient.h"
 
+@interface VBVoobaClient ()
+
+@property (nonatomic, strong) NSString *userToken;
+
+@end
+
 @implementation VBVoobaClient
 
 #pragma mark - Vooba API Calls
@@ -16,7 +22,7 @@
 {
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                              VOOBA_APP_TOKEN, @"appToken",
-                             @"e4951e957440c49d52f512c7f64cadfae60e33a15f0f5f1bbc3114712a3c3921", @"userToken",
+                             self.userToken, @"userToken",
                              @0, @"start",
                              @500, @"end",
                              @"20100101", @"afterDate", nil];
@@ -31,6 +37,47 @@
             block([NSArray array], error);
         }
     }];
+}
+
+- (void)loginWithEmail:(NSString*)email password:(NSString*)password andBlock:(void (^)(NSError *error))block
+{
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            VOOBA_APP_TOKEN, @"appToken",
+                            email, @"email",
+                            password, @"password", nil];
+    [[VBVoobaClient sharedClient] postPath:@"api.php?act=login" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        self.userToken = [responseObject objectForKey:@"userToken"];
+        
+        if (block)
+        {
+            block(nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+       if (block)
+       {
+           block(error);
+       }
+    }];
+}
+
+#pragma mark - Properties 
+
+- (NSString *)userToken
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"userToken"];
+}
+
+- (void)setUserToken:(NSString *)userToken
+{
+    [[NSUserDefaults standardUserDefaults] setObject:userToken forKey:@"userToken"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+#pragma mark - Helpers
+
+- (BOOL)userLoggedIn
+{
+    return ([self.userToken length] > 0);
 }
 
 #pragma mark - AFHTTPClient Configuration

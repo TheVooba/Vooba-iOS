@@ -32,6 +32,8 @@
 		94D8E9C815E026CF00B984FE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9AD15E026CF00B984FE /* CoreData.framework */; };
 		94D8E9D015E026CF00B984FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94D8E9CE15E026CF00B984FE /* InfoPlist.strings */; };
 		94D8E9D315E026CF00B984FE /* VoobaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D8E9D215E026CF00B984FE /* VoobaTests.m */; };
+		94F17ED1165A206300B63FBF /* VBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F17ED0165A206300B63FBF /* VBLoginViewController.m */; };
+		94F17ED5165B0F3900B63FBF /* VBInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F17ED4165B0F3900B63FBF /* VBInitialViewController.m */; };
 		C26684EE7E464B7A8AB3BC59 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E10C6AFE8C2840559AC4A0F0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,10 @@
 		94D8E9CF15E026CF00B984FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94D8E9D115E026CF00B984FE /* VoobaTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoobaTests.h; sourceTree = "<group>"; };
 		94D8E9D215E026CF00B984FE /* VoobaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoobaTests.m; sourceTree = "<group>"; };
+		94F17ECF165A206300B63FBF /* VBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBLoginViewController.h; sourceTree = "<group>"; };
+		94F17ED0165A206300B63FBF /* VBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBLoginViewController.m; sourceTree = "<group>"; };
+		94F17ED3165B0F3900B63FBF /* VBInitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBInitialViewController.h; sourceTree = "<group>"; };
+		94F17ED4165B0F3900B63FBF /* VBInitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBInitialViewController.m; sourceTree = "<group>"; };
 		E10C6AFE8C2840559AC4A0F0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -147,6 +153,8 @@
 		94331A9D1648A18700708E1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				94F17ED2165B0F2900B63FBF /* Initial */,
+				94F17ECD165A202100B63FBF /* Login */,
 				94331A9F1648A19500708E1E /* Board */,
 			);
 			name = Views;
@@ -247,6 +255,24 @@
 				94D8E9CE15E026CF00B984FE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94F17ECD165A202100B63FBF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				94F17ECF165A206300B63FBF /* VBLoginViewController.h */,
+				94F17ED0165A206300B63FBF /* VBLoginViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		94F17ED2165B0F2900B63FBF /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				94F17ED3165B0F3900B63FBF /* VBInitialViewController.h */,
+				94F17ED4165B0F3900B63FBF /* VBInitialViewController.m */,
+			);
+			name = Initial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,6 +409,8 @@
 				942930A21659F4B80002504B /* VBNewFriendCell.m in Sources */,
 				942930A5165A006E0002504B /* VBNewPhotoAlbumCell.m in Sources */,
 				942930AA165A07490002504B /* VBVoobaClient.m in Sources */,
+				94F17ED1165A206300B63FBF /* VBLoginViewController.m in Sources */,
+				94F17ED5165B0F3900B63FBF /* VBInitialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,9 @@
 @interface VBVoobaClient : AFHTTPClient
 
 - (void)boardPostsWithBlock:(void (^)(NSArray *posts, NSError *error))block;
+- (void)loginWithEmail:(NSString*)email password:(NSString*)password andBlock:(void (^)(NSError *error))block;
+
+- (BOOL)userLoggedIn;
 
 + (VBVoobaClient*)sharedClient;
 
