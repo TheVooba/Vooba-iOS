@@ -124,6 +124,27 @@
     }];
 }
 
+- (void)logoutWithBlock:(void (^)(NSError *))block
+{
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            VOOBA_APP_TOKEN, @"appToken",
+                            self.userToken, @"userToken", nil];
+    [[VBVoobaClient sharedClient] postPath:@"api.php?act=logout" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        self.userID = nil;
+        self.userToken = nil;
+        
+        if (block)
+        {
+            block(nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block)
+        {
+            block(error);
+        }
+    }];
+}
+
 #pragma mark - Properties 
 
 - (NSString *)userID

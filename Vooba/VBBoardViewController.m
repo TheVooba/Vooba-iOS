@@ -18,7 +18,9 @@
 @property (nonatomic, strong) NSArray *postData;
 
 - (void)refresh;
+
 - (IBAction)compose:(id)sender;
+- (IBAction)openSettings:(id)sender;
 
 @end
 
@@ -66,6 +68,28 @@
     UIViewController *composeVC = [[UIStoryboard storyboardWithName:@"iPhone-Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Compose"];
     [self setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
     [self presentViewController:composeVC animated:YES completion:nil];
+}
+
+- (void)openSettings:(id)sender
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Logout", nil];
+    [actionSheet showInView:self.view];
+}
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Logout"])
+    {
+        [[VBVoobaClient sharedClient] logoutWithBlock:^(NSError *error) {
+            if (error != nil)
+            {
+                NSLog(@"%@", error);
+            }
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }
 }
 
 #pragma mark - UITableViewDataSource

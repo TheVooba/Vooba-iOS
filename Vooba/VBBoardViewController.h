@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VBBoardViewController : UITableViewController
+@interface VBBoardViewController : UITableViewController <UIActionSheetDelegate>
 
 @end

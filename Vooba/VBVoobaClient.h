@@ -17,6 +17,7 @@
 - (void)commentsForTopic:(NSNumber*)topicID withBlock:(void (^)(NSArray *comments, NSError *error))block;
 
 - (void)loginWithEmail:(NSString*)email password:(NSString*)password andBlock:(void (^)(NSError *error))block;
+- (void)logoutWithBlock:(void (^)(NSError *error))block;
 
 - (BOOL)userLoggedIn;
 
