@@ -38,6 +38,7 @@
     [self.lblText setFont:[UIFont systemFontOfSize:12]];
     [self.lblText setDataDetectorTypes:UIDataDetectorTypeLink];
     [self.lblText setBackgroundColor:[UIColor clearColor]];
+    [self.lblText setDelegate:self];
     
     [self.contentView addSubview:self.imgAvatar];
     [self.contentView addSubview:self.lblName];
@@ -84,6 +85,16 @@
 {
     CGFloat height = MAX([VBTopicCell heightForCommentLabelWithContent:content] + 30, 60);
     return height + 10;
+}
+
+#pragma mark - TTTAttributedLabelDelegate
+
+- (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithURL:(NSURL *)url
+{
+    if ([self.delegate respondsToSelector:@selector(cell:didSelectLinkWithURL:)])
+    {
+        [self.delegate cell:self didSelectLinkWithURL:url];
+    }
 }
 
 #pragma mark - UIView

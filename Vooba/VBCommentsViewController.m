@@ -9,8 +9,6 @@
 #import "VBCommentsViewController.h"
 #import "VBComposeViewController.h"
 
-#import "VBTopicCell.h"
-
 @interface VBCommentsViewController ()
 
 @property (nonatomic, strong) NSArray *commentData;
@@ -73,6 +71,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     VBTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:[VBTopicCell cellIdentifier] forIndexPath:indexPath];
+    [cell setDelegate:self];
+    
     NSDictionary *data = [self.commentData objectAtIndex:[indexPath row]];
     
     [cell setFromName:data[@"name"] andToName:data[@"name"]];
@@ -92,6 +92,8 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     VBTopicCell *cell = [VBTopicCell new];
+    [cell setDelegate:self];
+    
     [cell setFromName:self.topicData[@"from"][@"name"] andToName:self.topicData[@"to"][@"name"]];
     [cell setComment:self.topicData[@"comment"]];
     
@@ -112,6 +114,14 @@
 {    
     NSDictionary *data = [self.commentData objectAtIndex:[indexPath row]];
     return [VBTopicCell heightWithContent:data[@"comment"]];
+}
+
+#pragma mark - VBTopicCellDelegate
+
+- (void)cell:(UITableViewCell *)cell didSelectLinkWithURL:(NSURL *)url
+{
+    SVWebViewController *webVC = [[SVWebViewController alloc] initWithURL:url];
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 @end

@@ -9,7 +9,6 @@
 #import "VBBoardViewController.h"
 #import "VBCommentsViewController.h"
 
-#import "VBTopicCell.h"
 #import "VBNewFriendCell.h"
 #import "VBNewPhotoAlbumCell.h"
 
@@ -102,6 +101,7 @@
     if ([post_type integerValue] == 0) // Topic
     {
         VBTopicCell *topic_cell = [tableView dequeueReusableCellWithIdentifier:[VBTopicCell cellIdentifier] forIndexPath:indexPath];
+        [topic_cell setDelegate:self];
         
         [topic_cell setFromName:data[@"from"][@"name"] andToName:data[@"to"][@"name"]];
         [topic_cell setComment:data[@"comment"]];
@@ -180,6 +180,14 @@
     }
     
     return height;
+}
+
+#pragma mark - VBTopicCellDelegate
+
+- (void)cell:(UITableViewCell *)cell didSelectLinkWithURL:(NSURL *)url
+{
+    SVWebViewController *webVC = [[SVWebViewController alloc] initWithURL:url];
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 @end

@@ -19,6 +19,13 @@
 
 @implementation VBLoginViewController
 
+#pragma mark - UIView
+
+- (void)viewDidLoad
+{
+    [self.txtEmail becomeFirstResponder];
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "VBTableViewCell.h"
 
-@interface VBTopicCell : VBTableViewCell
+@class VBTopicCell;
+@protocol VBTopicCellDelegate <NSObject>
+@optional
+- (void)cell:(UITableViewCell*)cell didSelectLinkWithURL:(NSURL*)url;
+@end
+
+@interface VBTopicCell : VBTableViewCell <TTTAttributedLabelDelegate>
+
+@property (nonatomic, weak) id<VBTopicCellDelegate> delegate;
 
 + (CGFloat)heightWithContent:(NSString*)content;
 + (CGFloat)heightForCommentLabelWithContent:(NSString*)content;

@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VBCommentsViewController : UITableViewController
+#import "VBTopicCell.h"
+
+@interface VBCommentsViewController : UITableViewController <VBTopicCellDelegate>
 
 @property (nonatomic, strong) NSDictionary *topicData;
 

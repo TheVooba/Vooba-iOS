@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VBBoardViewController : UITableViewController <UIActionSheetDelegate>
+#import "VBTopicCell.h"
+
+@interface VBBoardViewController : UITableViewController <UIActionSheetDelegate, VBTopicCellDelegate>
 
 @end
