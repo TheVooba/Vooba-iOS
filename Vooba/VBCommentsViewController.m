@@ -7,6 +7,7 @@
 //
 
 #import "VBCommentsViewController.h"
+#import "VBComposeViewController.h"
 
 #import "VBTopicCell.h"
 
@@ -15,6 +16,8 @@
 @property (nonatomic, strong) NSArray *commentData;
 
 - (void)refresh;
+
+- (IBAction)compose:(id)sender;
 
 @end
 
@@ -53,6 +56,16 @@
             NSLog(@"%@", error);
         }
     }];
+}
+
+#pragma mark - Events
+
+- (IBAction)compose:(id)sender
+{
+    VBComposeViewController *composeVC = [[UIStoryboard storyboardWithName:@"iPhone-Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Compose"];
+    [self setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    [composeVC setTopicID:self.topicData[@"topicID"]];
+    [self presentViewController:composeVC animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource

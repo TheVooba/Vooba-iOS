@@ -11,12 +11,55 @@
 @interface VBVoobaClient ()
 
 @property (nonatomic, strong) NSString *userToken;
+@property (nonatomic, strong) NSString *userID;
 
 @end
 
 @implementation VBVoobaClient
 
 #pragma mark - Vooba API Calls
+
+- (void)newBoardPostWithMessage:(NSString *)message andBlock:(void (^)(NSError *error))block
+{
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            VOOBA_APP_TOKEN, @"appToken",
+                            self.userToken, @"userToken",
+                            message, @"message",
+                            self.userID, @"userID", nil];
+    [[VBVoobaClient sharedClient] postPath:@"api.php?act=newBoardPost" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (block)
+        {
+            // Need to handle the various status codes.
+            block(nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block)
+        {
+            block(error);
+        }
+    }];
+}
+
+- (void)newCommentOnTopic:(NSNumber *)topicID withMessage:(NSString *)message andBlock:(void (^)(NSError *))block
+{
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            VOOBA_APP_TOKEN, @"appToken",
+                            self.userToken, @"userToken",
+                            message, @"comment",
+                            topicID, @"topicID", nil];
+    [[VBVoobaClient sharedClient] postPath:@"api.php?act=newBoardComment" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (block)
+        {
+            // Need to handle the various status codes.
+            block(nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block)
+        {
+            block(error);
+        }
+    }];
+}
 
 - (void)commentsForTopic:(NSNumber*)topicID withBlock:(void (^)(NSArray *, NSError *))block
 {
@@ -66,6 +109,7 @@
                             email, @"email",
                             password, @"password", nil];
     [[VBVoobaClient sharedClient] postPath:@"api.php?act=login" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        self.userID = responseObject[@"user"][@"userID"];
         self.userToken = [responseObject objectForKey:@"userToken"];
         
         if (block)
@@ -81,6 +125,17 @@
 }
 
 #pragma mark - Properties 
+
+- (NSString *)userID
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"userID"];
+}
+
+- (void)setUserID:(NSString *)userID
+{
+    [[NSUserDefaults standardUserDefaults] setObject:userID forKey:@"userID"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
 - (NSString *)userToken
 {

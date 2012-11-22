@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSArray *postData;
 
 - (void)refresh;
+- (IBAction)compose:(id)sender;
 
 @end
 
@@ -56,6 +57,15 @@
             NSLog(@"%@", error);
         }
     }];
+}
+
+#pragma mark - Events
+
+- (IBAction)compose:(id)sender
+{
+    UIViewController *composeVC = [[UIStoryboard storyboardWithName:@"iPhone-Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Compose"];
+    [self setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    [self presentViewController:composeVC animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource
