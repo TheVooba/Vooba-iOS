@@ -7,6 +7,7 @@
 //
 
 #import "VBBoardViewController.h"
+#import "VBCommentsViewController.h"
 
 #import "VBTopicCell.h"
 #import "VBNewFriendCell.h"
@@ -112,6 +113,15 @@
 }
 
 #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *data = [self.postData objectAtIndex:[indexPath row]];
+    VBCommentsViewController *commentsVC = [[UIStoryboard storyboardWithName:@"iPhone-Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Comments"];
+    [commentsVC setTopicData:data];
+    [self.navigationController pushViewController:commentsVC animated:YES];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat height = 0;

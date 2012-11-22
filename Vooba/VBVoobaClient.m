@@ -18,6 +18,26 @@
 
 #pragma mark - Vooba API Calls
 
+- (void)commentsForTopic:(NSNumber*)topicID withBlock:(void (^)(NSArray *, NSError *))block
+{
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            VOOBA_APP_TOKEN, @"appToken",
+                            self.userToken, @"userToken",
+                            topicID, @"topicID",
+                            @"20100101", @"afterDate", nil];
+    [[VBVoobaClient sharedClient] postPath:@"api.php?act=getBoardComments" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (block)
+        {
+            block([[[responseObject objectForKey:@"boardComments"] objectAtIndex:0] objectForKey:@"data"], nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block)
+        {
+            block([NSArray array], error);
+        }
+    }];
+}
+
 - (void)boardPostsWithBlock:(void (^)(NSArray *posts, NSError *error))block
 {
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:

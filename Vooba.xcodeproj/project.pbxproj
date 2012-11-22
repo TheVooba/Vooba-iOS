@@ -18,6 +18,7 @@
 		942930AA165A07490002504B /* VBVoobaClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 942930A9165A07490002504B /* VBVoobaClient.m */; };
 		943B7E8516365651009A4799 /* VBBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943B7E8416365651009A4799 /* VBBoardViewController.m */; };
 		943B7E881636566C009A4799 /* iPhone-Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943B7E871636566C009A4799 /* iPhone-Storyboard.storyboard */; };
+		94615430165DED17001A3FD2 /* VBCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9461542F165DED17001A3FD2 /* VBCommentsViewController.m */; };
 		94D8E9A815E026CF00B984FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9A715E026CF00B984FE /* UIKit.framework */; };
 		94D8E9AA15E026CF00B984FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9A915E026CF00B984FE /* Foundation.framework */; };
 		94D8E9AC15E026CF00B984FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9AB15E026CF00B984FE /* CoreGraphics.framework */; };
@@ -68,6 +69,8 @@
 		943B7E8316365651009A4799 /* VBBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBBoardViewController.h; sourceTree = "<group>"; };
 		943B7E8416365651009A4799 /* VBBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBBoardViewController.m; sourceTree = "<group>"; };
 		943B7E871636566C009A4799 /* iPhone-Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "iPhone-Storyboard.storyboard"; sourceTree = "<group>"; };
+		9461542E165DED17001A3FD2 /* VBCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBCommentsViewController.h; sourceTree = "<group>"; };
+		9461542F165DED17001A3FD2 /* VBCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBCommentsViewController.m; sourceTree = "<group>"; };
 		94D8E9A315E026CF00B984FE /* Vooba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vooba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D8E9A715E026CF00B984FE /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		94D8E9A915E026CF00B984FE /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -153,6 +156,7 @@
 		94331A9D1648A18700708E1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9461542C165DED09001A3FD2 /* Comments */,
 				94F17ED2165B0F2900B63FBF /* Initial */,
 				94F17ECD165A202100B63FBF /* Login */,
 				94331A9F1648A19500708E1E /* Board */,
@@ -173,6 +177,15 @@
 				942930A4165A006E0002504B /* VBNewPhotoAlbumCell.m */,
 			);
 			name = Board;
+			sourceTree = "<group>";
+		};
+		9461542C165DED09001A3FD2 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				9461542E165DED17001A3FD2 /* VBCommentsViewController.h */,
+				9461542F165DED17001A3FD2 /* VBCommentsViewController.m */,
+			);
+			name = Comments;
 			sourceTree = "<group>";
 		};
 		94D8E99815E026CF00B984FE = {
@@ -411,6 +424,7 @@
 				942930AA165A07490002504B /* VBVoobaClient.m in Sources */,
 				94F17ED1165A206300B63FBF /* VBLoginViewController.m in Sources */,
 				94F17ED5165B0F3900B63FBF /* VBInitialViewController.m in Sources */,
+				94615430165DED17001A3FD2 /* VBCommentsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,6 +29,7 @@
     self.lblName = [[UILabel alloc] initWithFrame:CGRectMake(65, 10, 245, 15)];
     [self.lblName setMinimumScaleFactor:12];
     [self.lblName setFont:[UIFont boldSystemFontOfSize:12]];
+    [self.lblName setBackgroundColor:[UIColor clearColor]];
     
     self.lblText = [[TTTAttributedLabel alloc] initWithFrame:CGRectZero];
     [self.lblText setLineBreakMode:NSLineBreakByWordWrapping];
@@ -36,6 +37,7 @@
     [self.lblText setNumberOfLines:0];
     [self.lblText setFont:[UIFont systemFontOfSize:12]];
     [self.lblText setDataDetectorTypes:UIDataDetectorTypeLink];
+    [self.lblText setBackgroundColor:[UIColor clearColor]];
     
     [self.contentView addSubview:self.imgAvatar];
     [self.contentView addSubview:self.lblName];
