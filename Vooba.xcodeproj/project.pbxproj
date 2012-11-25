@@ -52,8 +52,8 @@
 
 /* Begin PBXFileReference section */
 		79210A5290BC47E5A2AC810D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		942930871658BABB0002504B /* VBTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBTopicCell.h; sourceTree = "<group>"; };
-		942930881658BABB0002504B /* VBTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBTopicCell.m; sourceTree = "<group>"; };
+		942930871658BABB0002504B /* VBTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VBTopicCell.h; path = Vooba/VBTopicCell.h; sourceTree = "<group>"; };
+		942930881658BABB0002504B /* VBTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VBTopicCell.m; path = Vooba/VBTopicCell.m; sourceTree = "<group>"; };
 		9429308B1658BE550002504B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9429308D1658BFED0002504B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9429308F1658BFFA0002504B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -61,10 +61,10 @@
 		9429309B165970B10002504B /* VBTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBTableViewCell.m; sourceTree = "<group>"; };
 		9429309D1659E1290002504B /* NSString+WhitespaceTrimming.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WhitespaceTrimming.h"; sourceTree = "<group>"; };
 		9429309E1659E1290002504B /* NSString+WhitespaceTrimming.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WhitespaceTrimming.m"; sourceTree = "<group>"; };
-		942930A01659F4B70002504B /* VBNewFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBNewFriendCell.h; sourceTree = "<group>"; };
-		942930A11659F4B70002504B /* VBNewFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBNewFriendCell.m; sourceTree = "<group>"; };
-		942930A3165A006E0002504B /* VBNewPhotoAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBNewPhotoAlbumCell.h; sourceTree = "<group>"; };
-		942930A4165A006E0002504B /* VBNewPhotoAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBNewPhotoAlbumCell.m; sourceTree = "<group>"; };
+		942930A01659F4B70002504B /* VBNewFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VBNewFriendCell.h; path = Vooba/VBNewFriendCell.h; sourceTree = "<group>"; };
+		942930A11659F4B70002504B /* VBNewFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VBNewFriendCell.m; path = Vooba/VBNewFriendCell.m; sourceTree = "<group>"; };
+		942930A3165A006E0002504B /* VBNewPhotoAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VBNewPhotoAlbumCell.h; path = Vooba/VBNewPhotoAlbumCell.h; sourceTree = "<group>"; };
+		942930A4165A006E0002504B /* VBNewPhotoAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VBNewPhotoAlbumCell.m; path = Vooba/VBNewPhotoAlbumCell.m; sourceTree = "<group>"; };
 		942930A6165A033F0002504B /* Tokens.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tokens.h; sourceTree = "<group>"; };
 		942930A8165A07490002504B /* VBVoobaClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBVoobaClient.h; sourceTree = "<group>"; };
 		942930A9165A07490002504B /* VBVoobaClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBVoobaClient.m; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 			name = API;
 			sourceTree = "<group>";
 		};
-		94331A9D1648A18700708E1E /* Views */ = {
+		94331A9D1648A18700708E1E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				94615431165DFA26001A3FD2 /* Compose */,
@@ -167,7 +167,7 @@
 				94F17ECD165A202100B63FBF /* Login */,
 				94331A9F1648A19500708E1E /* Board */,
 			);
-			name = Views;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		94331A9F1648A19500708E1E /* Board */ = {
@@ -175,12 +175,6 @@
 			children = (
 				943B7E8316365651009A4799 /* VBBoardViewController.h */,
 				943B7E8416365651009A4799 /* VBBoardViewController.m */,
-				942930871658BABB0002504B /* VBTopicCell.h */,
-				942930881658BABB0002504B /* VBTopicCell.m */,
-				942930A01659F4B70002504B /* VBNewFriendCell.h */,
-				942930A11659F4B70002504B /* VBNewFriendCell.m */,
-				942930A3165A006E0002504B /* VBNewPhotoAlbumCell.h */,
-				942930A4165A006E0002504B /* VBNewPhotoAlbumCell.m */,
 			);
 			name = Board;
 			sourceTree = "<group>";
@@ -214,11 +208,33 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		94A4B65D1661AFC9008002ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				94A4B65E1661AFE7008002ED /* Table View Cells */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		94A4B65E1661AFE7008002ED /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				942930871658BABB0002504B /* VBTopicCell.h */,
+				942930881658BABB0002504B /* VBTopicCell.m */,
+				942930A01659F4B70002504B /* VBNewFriendCell.h */,
+				942930A11659F4B70002504B /* VBNewFriendCell.m */,
+				942930A3165A006E0002504B /* VBNewPhotoAlbumCell.h */,
+				942930A4165A006E0002504B /* VBNewPhotoAlbumCell.m */,
+			);
+			name = "Table View Cells";
+			sourceTree = "<group>";
+		};
 		94D8E99815E026CF00B984FE = {
 			isa = PBXGroup;
 			children = (
 				942930981658C0D10002504B /* Launch Images */,
 				94D8E9AF15E026CF00B984FE /* Vooba */,
+				94A4B65D1661AFC9008002ED /* Views */,
 				94D8E9CB15E026CF00B984FE /* VoobaTests */,
 				94D8E9A615E026CF00B984FE /* Frameworks */,
 				94D8E9A415E026CF00B984FE /* Products */,
@@ -255,7 +271,7 @@
 			children = (
 				942930A7165A065A0002504B /* API */,
 				942930991659708E0002504B /* Common */,
-				94331A9D1648A18700708E1E /* Views */,
+				94331A9D1648A18700708E1E /* Controllers */,
 				94D8E9B815E026CF00B984FE /* VBAppDelegate.h */,
 				94D8E9B915E026CF00B984FE /* VBAppDelegate.m */,
 				94D8E9BB15E026CF00B984FE /* Vooba.xcdatamodeld */,
