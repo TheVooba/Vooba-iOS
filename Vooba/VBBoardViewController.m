@@ -151,6 +151,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *data = [self.postData objectAtIndex:[indexPath row]];
+    NSNumber *post_type = data[@"type"];
+    if ([post_type integerValue] != 0)
+    {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        return;
+    }
+    
     VBCommentsViewController *commentsVC = [[UIStoryboard storyboardWithName:@"iPhone-Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Comments"];
     [commentsVC setTopicData:data];
     [self.navigationController pushViewController:commentsVC animated:YES];
