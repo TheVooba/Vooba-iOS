@@ -13,6 +13,7 @@
 @property (nonatomic, strong) UIImageView *imgAvatar;
 @property (nonatomic, strong) UILabel* lblName;
 @property (nonatomic, strong) TTTAttributedLabel* lblText;
+@property (nonatomic, strong) UILabel* lblDate;
 
 @end
 
@@ -40,9 +41,16 @@
     [self.lblText setBackgroundColor:[UIColor clearColor]];
     [self.lblText setDelegate:self];
     
+    self.lblDate = [[UILabel alloc] initWithFrame:CGRectZero];
+    [self.lblDate setMinimumScaleFactor:11];
+    [self.lblDate setFont:[UIFont systemFontOfSize:11]];
+    [self.lblDate setTextAlignment:NSTextAlignmentRight];
+    [self.lblDate setBackgroundColor:[UIColor clearColor]];
+    
     [self.contentView addSubview:self.imgAvatar];
     [self.contentView addSubview:self.lblName];
     [self.contentView addSubview:self.lblText];
+    [self.contentView addSubview:self.lblDate];
     
     return self;
 }
@@ -72,6 +80,14 @@
     [self setNeedsLayout];
 }
 
+- (void)setDate:(NSDate *)date
+{
+    if (date == nil) return;
+    
+    NSString* pretty_date = [MHPrettyDate prettyDateFromDate:date withFormat:MHPrettyDateShortRelativeTime];
+    self.lblDate.text = pretty_date;
+}
+
 + (CGFloat)heightForCommentLabelWithContent:(NSString*)content
 {
     CGSize constraint = CGSizeMake(255, 20000);
@@ -84,7 +100,7 @@
 + (CGFloat)heightWithContent:(NSString *)content
 {
     CGFloat height = MAX([VBTopicCell heightForCommentLabelWithContent:content] + 30, 60);
-    return height + 10;
+    return height + 20;
 }
 
 #pragma mark - TTTAttributedLabelDelegate
@@ -106,9 +122,13 @@
     self.imgAvatar.frame = CGRectMake(10, 10, 50, 50);
     self.lblName.frame = CGRectMake(65, 10, 245, 15);
     
-    CGRect textFrame = CGRectOffset(self.lblName.frame, 0, 20);
+    CGRect textFrame = CGRectOffset(self.lblName.frame, 0, self.lblName.frame.size.height);
     textFrame.size.height = [VBTopicCell heightForCommentLabelWithContent:self.lblText.text];
     self.lblText.frame = textFrame;
+    
+    CGRect dateFrame = CGRectOffset(self.lblText.frame, 0, textFrame.size.height);
+    dateFrame.size = self.lblName.frame.size;
+    self.lblDate.frame = dateFrame;
 }
 
 @end

@@ -109,6 +109,9 @@
         NSString *avatarPath = data[@"from"][@"avatar"];
         [topic_cell setAvatarURL:[NSURL URLWithString:avatarPath]];
         
+        NSDate* date = [[NSDateFormatter boardDateFormatter] dateFromString:data[@"date"]];
+        [topic_cell setDate:date];
+        
         cell = topic_cell;
     }
     else if ([post_type integerValue] == 1) // Like a Board

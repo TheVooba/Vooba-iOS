@@ -25,5 +25,6 @@
 - (void)setAvatarURL:(NSURL*)url;
 - (void)setFromName:(NSString*)fromName andToName:(NSString*)toName;
 - (void)setComment:(NSString*)comment;
+- (void)setDate:(NSDate*)date;
 
 @end
