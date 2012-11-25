@@ -8,6 +8,12 @@
 
 #import "VBVoobaClient.h"
 
+@interface VBVoobaClient ()
+
+@property (nonatomic, strong) AFNetworkActivityIndicatorManager *networkActivityIndicatorManager;
+
+@end
+
 @implementation VBVoobaClient
 
 #pragma mark - Vooba API Calls
@@ -165,6 +171,11 @@
     [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
     
     [self setDefaultHeader:@"Accept" value:@"application/json"];
+    
+    // This should likely be handled by AFHTTPClient, but for some reason its not. Fortunately
+    // all we have to handle is creation of the indicator manager so that it can register handling
+    // some notifications.
+    [self setNetworkActivityIndicatorManager:[AFNetworkActivityIndicatorManager new]];
     
     return self;
 }
