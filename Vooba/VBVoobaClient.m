@@ -8,13 +8,6 @@
 
 #import "VBVoobaClient.h"
 
-@interface VBVoobaClient ()
-
-@property (nonatomic, strong) NSString *userToken;
-@property (nonatomic, strong) NSString *userID;
-
-@end
-
 @implementation VBVoobaClient
 
 #pragma mark - Vooba API Calls
@@ -23,9 +16,9 @@
 {
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             VOOBA_APP_TOKEN, @"appToken",
-                            self.userToken, @"userToken",
+                            [NSUserDefaults userToken], @"userToken",
                             message, @"message",
-                            self.userID, @"userID", nil];
+                            [NSUserDefaults userID], @"userID", nil];
     [[VBVoobaClient sharedClient] postPath:@"api.php?act=newBoardPost" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (block)
         {
@@ -44,7 +37,7 @@
 {
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             VOOBA_APP_TOKEN, @"appToken",
-                            self.userToken, @"userToken",
+                            [NSUserDefaults userToken], @"userToken",
                             message, @"comment",
                             topicID, @"topicID", nil];
     [[VBVoobaClient sharedClient] postPath:@"api.php?act=newBoardComment" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -65,7 +58,7 @@
 {
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             VOOBA_APP_TOKEN, @"appToken",
-                            self.userToken, @"userToken",
+                            [NSUserDefaults userToken], @"userToken",
                             topicID, @"topicID",
                             @"20100101", @"afterDate", nil];
     [[VBVoobaClient sharedClient] postPath:@"api.php?act=getBoardComments" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -85,7 +78,7 @@
 {
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                              VOOBA_APP_TOKEN, @"appToken",
-                             self.userToken, @"userToken",
+                             [NSUserDefaults userToken], @"userToken",
                              @0, @"start",
                              @500, @"end",
                              @"20100101", @"afterDate", nil];
@@ -109,8 +102,8 @@
                             email, @"email",
                             password, @"password", nil];
     [[VBVoobaClient sharedClient] postPath:@"api.php?act=login" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        self.userID = responseObject[@"user"][@"userID"];
-        self.userToken = [responseObject objectForKey:@"userToken"];
+        [NSUserDefaults setUserID:responseObject[@"user"][@"userID"]];
+        [NSUserDefaults setUserToken:[responseObject objectForKey:@"userToken"]];
         
         if (block)
         {
@@ -128,10 +121,10 @@
 {
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             VOOBA_APP_TOKEN, @"appToken",
-                            self.userToken, @"userToken", nil];
+                            [NSUserDefaults userToken], @"userToken", nil];
     [[VBVoobaClient sharedClient] postPath:@"api.php?act=logout" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        self.userID = nil;
-        self.userToken = nil;
+        [NSUserDefaults setUserID:nil];
+        [NSUserDefaults setUserToken:nil];
         
         if (block)
         {
@@ -145,35 +138,11 @@
     }];
 }
 
-#pragma mark - Properties 
-
-- (NSString *)userID
-{
-    return [[NSUserDefaults standardUserDefaults] objectForKey:@"userID"];
-}
-
-- (void)setUserID:(NSString *)userID
-{
-    [[NSUserDefaults standardUserDefaults] setObject:userID forKey:@"userID"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (NSString *)userToken
-{
-    return [[NSUserDefaults standardUserDefaults] objectForKey:@"userToken"];
-}
-
-- (void)setUserToken:(NSString *)userToken
-{
-    [[NSUserDefaults standardUserDefaults] setObject:userToken forKey:@"userToken"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
 #pragma mark - Helpers
 
 - (BOOL)userLoggedIn
 {
-    return ([self.userToken length] > 0);
+    return ([[NSUserDefaults userToken] length] > 0);
 }
 
 #pragma mark - AFHTTPClient Configuration

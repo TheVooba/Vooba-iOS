@@ -20,6 +20,7 @@
 		943B7E881636566C009A4799 /* iPhone-Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943B7E871636566C009A4799 /* iPhone-Storyboard.storyboard */; };
 		94615430165DED17001A3FD2 /* VBCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9461542F165DED17001A3FD2 /* VBCommentsViewController.m */; };
 		94615434165DFA31001A3FD2 /* VBComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94615433165DFA31001A3FD2 /* VBComposeViewController.m */; };
+		94A4B65B1661A721008002ED /* NSUserDefaults+VoobaUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A4B65A1661A721008002ED /* NSUserDefaults+VoobaUserDefaults.m */; };
 		94D8E9A815E026CF00B984FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9A715E026CF00B984FE /* UIKit.framework */; };
 		94D8E9AA15E026CF00B984FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9A915E026CF00B984FE /* Foundation.framework */; };
 		94D8E9AC15E026CF00B984FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D8E9AB15E026CF00B984FE /* CoreGraphics.framework */; };
@@ -74,6 +75,8 @@
 		9461542F165DED17001A3FD2 /* VBCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBCommentsViewController.m; sourceTree = "<group>"; };
 		94615432165DFA31001A3FD2 /* VBComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBComposeViewController.h; sourceTree = "<group>"; };
 		94615433165DFA31001A3FD2 /* VBComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBComposeViewController.m; sourceTree = "<group>"; };
+		94A4B6591661A721008002ED /* NSUserDefaults+VoobaUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+VoobaUserDefaults.h"; sourceTree = "<group>"; };
+		94A4B65A1661A721008002ED /* NSUserDefaults+VoobaUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+VoobaUserDefaults.m"; sourceTree = "<group>"; };
 		94D8E9A315E026CF00B984FE /* Vooba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vooba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D8E9A715E026CF00B984FE /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		94D8E9A915E026CF00B984FE /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -139,10 +142,9 @@
 		942930991659708E0002504B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				94A4B6571661A6FD008002ED /* Categories */,
 				9429309A165970B10002504B /* VBTableViewCell.h */,
 				9429309B165970B10002504B /* VBTableViewCell.m */,
-				9429309D1659E1290002504B /* NSString+WhitespaceTrimming.h */,
-				9429309E1659E1290002504B /* NSString+WhitespaceTrimming.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -199,6 +201,17 @@
 				94615433165DFA31001A3FD2 /* VBComposeViewController.m */,
 			);
 			name = Compose;
+			sourceTree = "<group>";
+		};
+		94A4B6571661A6FD008002ED /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				9429309D1659E1290002504B /* NSString+WhitespaceTrimming.h */,
+				9429309E1659E1290002504B /* NSString+WhitespaceTrimming.m */,
+				94A4B6591661A721008002ED /* NSUserDefaults+VoobaUserDefaults.h */,
+				94A4B65A1661A721008002ED /* NSUserDefaults+VoobaUserDefaults.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		94D8E99815E026CF00B984FE = {
@@ -439,6 +452,7 @@
 				94F17ED5165B0F3900B63FBF /* VBInitialViewController.m in Sources */,
 				94615430165DED17001A3FD2 /* VBCommentsViewController.m in Sources */,
 				94615434165DFA31001A3FD2 /* VBComposeViewController.m in Sources */,
+				94A4B65B1661A721008002ED /* NSUserDefaults+VoobaUserDefaults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
